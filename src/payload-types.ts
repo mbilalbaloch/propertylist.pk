@@ -69,7 +69,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    'add-property': AddProperty;
+    property: Property;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -78,7 +78,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    'add-property': AddPropertySelect<false> | AddPropertySelect<true>;
+    property: PropertySelect<false> | PropertySelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -160,9 +160,9 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "add-property".
+ * via the `definition` "property".
  */
-export interface AddProperty {
+export interface Property {
   id: number;
   title: string;
   description: string;
@@ -187,8 +187,8 @@ export interface PayloadLockedDocument {
         value: number | Media;
       } | null)
     | ({
-        relationTo: 'add-property';
-        value: number | AddProperty;
+        relationTo: 'property';
+        value: number | Property;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -274,9 +274,9 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "add-property_select".
+ * via the `definition` "property_select".
  */
-export interface AddPropertySelect<T extends boolean = true> {
+export interface PropertySelect<T extends boolean = true> {
   title?: T;
   description?: T;
   phoneNumber?: T;

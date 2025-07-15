@@ -23,7 +23,7 @@ return (
         <div className="nav-links">
           <Link href="/admin/login"><button className="btn">Login</button></Link>
           <Link href="/admin/create-first-user"><button className="btn">Signup</button></Link>
-          <Link href="/browseproperties"><button className="btn btn-primary">Browse Properties</button></Link>
+          <Link href="/properties"><button className="btn btn-primary">Browse Properties</button></Link>
         </div>
       </nav>
 
@@ -35,7 +35,7 @@ return (
         <p>A fast and secure platform to list your real estate — fully powered by PayloadCMS.</p>
         <div className="hero-buttons">
           <Link href="/admin"><button className="btn btn-success">Go to Payload Login Page</button></Link>
-          <Link href="/browseproperties"><button className="btn">Browse Properties</button></Link>
+          <Link href="/properties"><button className="btn">Browse Properties</button></Link>
         </div>
       </section>
 

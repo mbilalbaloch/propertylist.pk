@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import './browse.css';
+import './page.css';
 
 interface Property {
   id: string;
@@ -14,7 +14,7 @@ interface Property {
   };
 }
 
-export default function BrowseProperties() {
+export default function Properties() {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -22,7 +22,7 @@ export default function BrowseProperties() {
   useEffect(() => {
     const fetchProperties = async () => {
       try {
-        const res = await fetch('http://localhost:3000/api/add-property', {
+        const res = await fetch('http://localhost:3000/api/property', {
           cache: 'no-store',
         });
         if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);

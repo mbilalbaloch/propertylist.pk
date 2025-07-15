@@ -1,6 +1,6 @@
 // storage-adapter-import-placeholder
 import { postgresAdapter } from '@payloadcms/db-postgres'
-import { AddProperty } from './collections/property/addproperty'
+import { Property } from './collections/Property'
 import { payloadCloudPlugin } from '@payloadcms/payload-cloud'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
@@ -22,7 +22,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media,
-    AddProperty
+    Property
   ],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',

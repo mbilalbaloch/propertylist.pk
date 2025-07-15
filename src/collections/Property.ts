@@ -1,9 +1,12 @@
 import type { CollectionConfig } from 'payload'
 
-export const AddProperty: CollectionConfig = {
-    slug: 'add-property',
+export const Property: CollectionConfig = {
+    slug: 'property',
     admin: {
         defaultColumns: ['title', 'description', 'phoneNumber'],
+    },
+    access: {
+        read: () => true,
     },
     fields: [
         {
