@@ -1,21 +1,24 @@
-import { headers as getHeaders } from 'next/headers.js'
-import Link from 'next/link'
-import { getPayload } from 'payload'
-import React from 'react'
-import { fileURLToPath } from 'url'
+'use client'
 
-import config from '@/payload.config'
-import './styles.css'
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import PropertyList from './properties/page';
+import './styles.css';
 
-export default async function HomePage() {
-  const headers = await getHeaders()
-  const payloadConfig = await config
-  const payload = await getPayload({ config: payloadConfig })
-  const { user } = await payload.auth({ headers })
+export default function HomePage() {
+  const [properties, setProperties] = useState([]);
 
-  const fileURL = `vscode://file/${fileURLToPath(import.meta.url)}`
+  const fetchFiltered = async (query = '/api/property') => {
+    const res = await fetch(query, { cache: 'no-store' });
+    const data = await res.json();
+    setProperties(data?.docs || []);
+  };
 
-return (
+  useEffect(() => {
+    fetchFiltered();
+  }, []);
+
+  return (
     <div className="home-wrapper page-wrapper">
       {/* Navbar */}
       <nav className="navbar">
@@ -39,7 +42,16 @@ return (
         </div>
       </section>
 
+      {/* 🔍 Filter */}
+      <section>
 
+
+      </section>
+
+      {/* 🏠 Property List */}
+      <section>
+        <PropertyList properties={properties} />
+      </section>
     </div>
   );
 }

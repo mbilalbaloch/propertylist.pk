@@ -166,8 +166,15 @@ export interface Property {
   id: number;
   title: string;
   description: string;
+  image: number | Media;
   phoneNumber: string;
-  image?: (number | null) | Media;
+  city: string;
+  area: string;
+  type: 'House' | 'Flat' | 'Plot' | 'Commercial';
+  price: number;
+  size: string;
+  bedrooms?: number | null;
+  bathrooms?: number | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -279,8 +286,15 @@ export interface MediaSelect<T extends boolean = true> {
 export interface PropertySelect<T extends boolean = true> {
   title?: T;
   description?: T;
-  phoneNumber?: T;
   image?: T;
+  phoneNumber?: T;
+  city?: T;
+  area?: T;
+  type?: T;
+  price?: T;
+  size?: T;
+  bedrooms?: T;
+  bathrooms?: T;
   updatedAt?: T;
   createdAt?: T;
 }

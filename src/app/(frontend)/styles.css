@@ -89,3 +89,30 @@ body {
 .hero-buttons button {
   margin: 0 8px;
 }
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+  background: #111;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-form input,
+.filter-form select {
+  padding: 8px;
+  border-radius: 6px;
+  background: #222;
+  color: white;
+  border: 1px solid #333;
+  flex: 1 1 150px;
+}
+
+.filter-form button {
+  background: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+}
