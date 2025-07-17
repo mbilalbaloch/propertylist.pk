@@ -87,3 +87,21 @@
   width: 20px;
   height: 20px;
 }
+.property-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* space between cards */
+  padding-left: 20px; /* space from the left */
+}
+
+.property-card {
+  width: 300px;
+  background-color: rgb(25, 25, 25);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+.ml-5 {
+  margin-left: 20px; /* Adjusted for better spacing */
+}

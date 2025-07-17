@@ -116,3 +116,7 @@ body {
   border: none;
   border-radius: 8px;
 }
+.bg-gray-900 {
+  background-color: #959494;
+  font-weight: 700;
+}

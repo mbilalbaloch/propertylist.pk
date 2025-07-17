@@ -17,16 +17,26 @@ interface Property {
   phoneNumber?: string;
 }
 
-export default function PropertyList({ properties }: { properties: Property[] }) {
+export default function Property({ properties = [] }: { properties?: Property[] }) {
+  if (!properties.length) {
+    return <p>No properties available.</p>;
+  }
+
   return (
     <div className="property-grid">
       {properties.map((property) => (
         <div key={property.id} className="property-card">
           {property.image?.url && (
-            <img src={property.image.url} alt={property.title || 'Property Image'} className="property-img" />
+            <img
+              src={property.image.url}
+              alt={property.title || 'Property Image'}
+              className="property-img"
+            />
           )}
           <h2 className="property-title">{property.title || 'No Title'}</h2>
-          <p className="property-description">{property.description || 'No Description Available'}</p>
+          <p className="property-description">
+            {property.description || 'No Description Available'}
+          </p>
           <div className="property-info">
             <p><strong>City:</strong> {property.city}</p>
             <p><strong>Area:</strong> {property.area}</p>
